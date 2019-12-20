@@ -11,6 +11,18 @@ from coolqbot import bot
 from .api import API
 from .data import DATA, get_bosses_info, get_jobs_info
 
+__plugin_name__ = 'dps'
+__plugin_usage__ = r"""
+DPS(FFLogs)
+
+查询输出排行榜：
+/dps 副本名 职业 DPS 种类（支持 rdps adps pdps，留空默认为 rdps）
+查询指定角色的排名：
+/dps 副本名 角色名 服务器名
+也可直接查询自己绑定角色的排名：
+/dps 副本名 me
+"""
+
 HOUR = int(DATA.config_get('cache', 'hour', fallback='4'))
 MINUTE = int(DATA.config_get('cache', 'minute', fallback='30'))
 SECOND = int(DATA.config_get('cache', 'second', fallback='0'))
